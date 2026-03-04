@@ -35,9 +35,16 @@ def test_addition_reasonable():
     assert add(-6,7) == 1
     assert add(-7,0) == -7
     assert add(7,0) == 0
+    print("Test ADDITION REASONABLE PASS")
+def test_addiction_communitative():
+    assert add(7,-6) == 1
+    assert add(-6,7) == 1
+    print("Test ADDITION is COMMUNITATIVE PASSED")
 
 if __name__ == "__main__":
     test_addition()
     test_addiction_with_bug()
     test_addition_duplicated()
     #test_addition_overcomlicated()
+    test_addition_reasonable()
+    test_addiction_communitative()
