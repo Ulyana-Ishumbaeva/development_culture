@@ -26,6 +26,15 @@ def test_addition_overcomlicated():
             assert add(-i,j) == sum([-i,j])
             assert add(i,-j) == sum([i,-j])
             assert add(-i,-j) == sum([-i,-j])
+def test_addition_reasonable():
+    assert add(2,2) == 4
+    assert add(0,0) == 0
+    assert add(6,7) == 13
+    assert add(-6,-7) == -13
+    assert add(6,-7) == -1
+    assert add(-6,7) == 1
+    assert add(-7,0) == -7
+    assert add(7,0) == 0
 
 if __name__ == "__main__":
     test_addition()
