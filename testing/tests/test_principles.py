@@ -17,7 +17,18 @@ def test_addiction_with_bug():
 def test_addition_duplicated():
     #is it real good test(reties on absence of + int add())
     assert add(2,3) == 2+3
+
+def test_addition_overcomlicated():
+    #formally valid test but too slow
+    for i in range(0,2**32):
+        for j in range(0,2**32):
+            assert add(i,j) == sum([i,j])
+            assert add(-i,j) == sum([-i,j])
+            assert add(i,-j) == sum([i,-j])
+            assert add(-i,-j) == sum([-i,-j])
+
 if __name__ == "__main__":
     test_addition()
     test_addiction_with_bug()
-    test_addiction_duplicated()
+    test_addition_duplicated()
+    #test_addition_overcomlicated()
