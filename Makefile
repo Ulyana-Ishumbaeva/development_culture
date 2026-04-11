@@ -8,3 +8,6 @@ endif
 
 remove-practice:
 ifdef NAME
+	$(error NAME is not defined)
+endif
+	rm -rf $(NAME)
