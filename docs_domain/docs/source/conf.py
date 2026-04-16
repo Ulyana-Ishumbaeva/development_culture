@@ -6,6 +6,11 @@
 # -- Project information -----------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
+from pathlib import Path
+import sys
+
+sys.path.insert(0, str(Path(__file__).resolve().parents[2] / "src"))
+
 project = 'sales'
 copyright = '2026, Ulyana Ishumbaeva'
 author = 'Ulyana Ishumbaeva'
@@ -15,12 +20,19 @@ release = '0.0.1'
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
 
 extensions ={
- 'myst_parser'
+ 'myst_parser',
+ "sphinx.ext.autodoc", #автоматический сбор docstring
+ "sphinx.ext.napoleon", #плддержка стандартов docstring
+ "sphinx.ext.autosummary",
+ "sphinx.ext.viewcode" #ссылка на код
 }
+
 sourse_suffic = {
  ".md" : "markdown",
  ".rst" :"restructuredtext"
 }
+
+autosummary_generate = True
 
 templates_path = ['_templates']
 exclude_patterns = []
