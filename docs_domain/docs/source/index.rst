@@ -17,3 +17,6 @@ documentation for details.
    QUICKSTART
    HOW_TO_CONRIBURE
 
+...include:: ../DOMAIN.md
+   :parser: myst_parser.sphinx
+
